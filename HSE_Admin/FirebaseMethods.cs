@@ -18,12 +18,15 @@ namespace HSE_Admin
         {
             public string Key { get; set; }
             public int Date { get; set; }
+            public string UsedBy { get; set; }
+
             public static SecureKey Create()
             {
                 var key = new SecureKey()
                 {
                     Key = GenerateKey(),
-                    Date = GetTimestamp()
+                    Date = 0,//GetTimestamp()
+                    UsedBy = ""
                 };
                 return key;
             }

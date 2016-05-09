@@ -44,5 +44,57 @@ namespace HSE_Admin
         {
             await DisplayAll();
         }
+
+        private void listBoxKeys_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBoxKeys.SelectedIndex+"");
+        }
+
+        private void окноToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxKeys_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            e.DrawBackground();
+
+            var sk = listBoxKeys.Items[e.Index] as SecureKey;
+
+            bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
+
+            if (sk.Date == 0)
+            {
+                e.Graphics.FillRectangle(Brushes.Green, e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
+            }
+
+            if (selected)
+            {
+                //e.Graphics.FillRectangle(Brushes.Gray, e.Bounds);
+            }
+
+            /*if (e.Index == 0)
+                e.Graphics.FillRectangle(Brushes.Green, e.Bounds);
+            else if (e.Index == 1)
+                e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
+            else
+                e.DrawBackground();
+                */
+
+
+            using (Brush textBrush = new SolidBrush(e.ForeColor))
+            {
+
+                e.Graphics.DrawString(listBoxKeys.Items[e.Index].ToString(), e.Font, textBrush, e.Bounds.Location);
+            }
+
+            e.DrawFocusRectangle();
+        }
     }
 }

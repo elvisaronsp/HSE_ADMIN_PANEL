@@ -36,6 +36,7 @@
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,11 +45,14 @@
             this.listBoxKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxKeys.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBoxKeys.FormattingEnabled = true;
             this.listBoxKeys.Location = new System.Drawing.Point(12, 129);
             this.listBoxKeys.Name = "listBoxKeys";
             this.listBoxKeys.Size = new System.Drawing.Size(194, 199);
             this.listBoxKeys.TabIndex = 1;
+            this.listBoxKeys.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxKeys_DrawItem);
+            this.listBoxKeys.DoubleClick += new System.EventHandler(this.listBoxKeys_DoubleClick);
             // 
             // label1
             // 
@@ -57,9 +61,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(205, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Доступные ключи";
+            this.label1.Text = "Доступные ключи для преподавателей";
             // 
             // buttonAddKey
             // 
@@ -87,10 +91,12 @@
             // 
             this.окноToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.пользователиToolStripMenuItem,
-            this.выходToolStripMenuItem});
+            this.выходToolStripMenuItem,
+            this.выходToolStripMenuItem1});
             this.окноToolStripMenuItem.Name = "окноToolStripMenuItem";
             this.окноToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.окноToolStripMenuItem.Text = "Окно";
+            this.окноToolStripMenuItem.Click += new System.EventHandler(this.окноToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
@@ -102,7 +108,7 @@
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Text = "О программе";
             // 
             // buttonRefresh
             // 
@@ -115,6 +121,12 @@
             this.buttonRefresh.Text = "Обновить";
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // выходToolStripMenuItem1
+            // 
+            this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.выходToolStripMenuItem1.Text = "Выход";
             // 
             // MainForm
             // 
@@ -149,6 +161,7 @@
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem1;
     }
 }
 
