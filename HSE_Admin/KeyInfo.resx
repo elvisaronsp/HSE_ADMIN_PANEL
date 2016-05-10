@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Желтый цвет ключа значит, что он не использован и может быть активирован пользователем(преподавателем),
-Зеленый - аккаунт активирован с помощью данного ключа,
-Красный - аккаунт заблокирован.
-Чтобы посмотреть информацию о ключе, дважды кликнете по нему.</value>
-  </data>
 </root>

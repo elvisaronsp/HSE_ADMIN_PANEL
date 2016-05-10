@@ -33,10 +33,9 @@
             this.buttonAddKey = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.окноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonRefresh = new System.Windows.Forms.Button();
-            this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,25 +89,25 @@
             // окноToolStripMenuItem
             // 
             this.окноToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.пользователиToolStripMenuItem,
-            this.выходToolStripMenuItem,
-            this.выходToolStripMenuItem1});
+            this.aboutItem,
+            this.exitItem});
             this.окноToolStripMenuItem.Name = "окноToolStripMenuItem";
             this.окноToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.окноToolStripMenuItem.Text = "Окно";
-            this.окноToolStripMenuItem.Click += new System.EventHandler(this.окноToolStripMenuItem_Click);
             // 
-            // пользователиToolStripMenuItem
+            // aboutItem
             // 
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.aboutItem.Name = "aboutItem";
+            this.aboutItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutItem.Text = "О программе";
+            this.aboutItem.Click += new System.EventHandler(this.aboutItem_Click);
             // 
-            // выходToolStripMenuItem
+            // exitItem
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.выходToolStripMenuItem.Text = "О программе";
+            this.exitItem.Name = "exitItem";
+            this.exitItem.Size = new System.Drawing.Size(152, 22);
+            this.exitItem.Text = "Выход";
+            this.exitItem.Click += new System.EventHandler(this.exitItem_Click);
             // 
             // buttonRefresh
             // 
@@ -121,12 +120,6 @@
             this.buttonRefresh.Text = "Обновить";
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // выходToolStripMenuItem1
-            // 
-            this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
-            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.выходToolStripMenuItem1.Text = "Выход";
             // 
             // MainForm
             // 
@@ -143,6 +136,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(240, 382);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Панель администрирования";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -158,10 +152,9 @@
         private System.Windows.Forms.Button buttonAddKey;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem окноToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutItem;
         private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitItem;
     }
 }
 
