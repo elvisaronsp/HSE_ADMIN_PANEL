@@ -41,7 +41,7 @@ namespace HSE_Admin
             }
             if (Key.Date < 0)
             {
-                labelInfo.Text = "Ключ забловкирован";
+                labelInfo.Text = "Ключ заблокирован";
                 buttonDelete.Text = "Разблокировать";
                 labelDate.Text = "";
             }
