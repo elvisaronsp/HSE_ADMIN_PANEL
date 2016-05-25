@@ -112,6 +112,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KeyInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

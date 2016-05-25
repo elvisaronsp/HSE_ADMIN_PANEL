@@ -98,14 +98,14 @@
             // aboutItem
             // 
             this.aboutItem.Name = "aboutItem";
-            this.aboutItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutItem.Size = new System.Drawing.Size(149, 22);
             this.aboutItem.Text = "О программе";
             this.aboutItem.Click += new System.EventHandler(this.aboutItem_Click);
             // 
             // exitItem
             // 
             this.exitItem.Name = "exitItem";
-            this.exitItem.Size = new System.Drawing.Size(152, 22);
+            this.exitItem.Size = new System.Drawing.Size(149, 22);
             this.exitItem.Text = "Выход";
             this.exitItem.Click += new System.EventHandler(this.exitItem_Click);
             // 
@@ -131,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxKeys);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(240, 382);

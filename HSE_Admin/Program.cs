@@ -16,7 +16,15 @@ namespace HSE_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            try
+            {
+                Application.Run(new MainForm());
+            }
+            catch
+            {
+                MessageBox.Show(@"Произошла ошибка, программа перезапустится", @"Внимание!");
+                Application.Restart();
+            }
         }
     }
 }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static HSE_Admin.FirebaseMethods;
 
 namespace HSE_Admin
 {
@@ -18,10 +17,10 @@ namespace HSE_Admin
             InitializeComponent();
         }
 
-        Dictionary<string, SecureKey> keys = new Dictionary<string, SecureKey>();
+        Dictionary<string, FirebaseMethods.SecureKey> keys = new Dictionary<string, FirebaseMethods.SecureKey>();
         private async Task DisplayAll()
         {
-            keys = await GetKeys();
+            keys = await FirebaseMethods.GetKeys();
             listBoxKeys.Items.Clear();
             listBoxKeys.Items.AddRange(keys.Values.ToArray());
         }
@@ -29,7 +28,7 @@ namespace HSE_Admin
         private async void buttonAddKey_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            string status = await AddKey();
+            string status = await FirebaseMethods.AddKey();
             Enabled = true;
             if (status == "OK")
             {
@@ -53,7 +52,7 @@ namespace HSE_Admin
             try
             {
                 if (listBoxKeys.SelectedIndex < 0) return;
-                var key = listBoxKeys.SelectedItem as SecureKey;
+                var key = listBoxKeys.SelectedItem as FirebaseMethods.SecureKey;
                 var id = keys.First(x => x.Value.Key == key.Key).Key;
                 var f = new KeyInfo(id, key);
                 var res = f.ShowDialog();
@@ -68,7 +67,7 @@ namespace HSE_Admin
 
             e.DrawBackground();
 
-            var sk = listBoxKeys.Items[e.Index] as SecureKey;
+            var sk = listBoxKeys.Items[e.Index] as FirebaseMethods.SecureKey;
 
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
 

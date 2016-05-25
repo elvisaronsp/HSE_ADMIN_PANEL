@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static HSE_Admin.FirebaseMethods;
 
 namespace HSE_Admin
 {
     public partial class KeyInfo : Form
     {
-        public KeyInfo(string Id, SecureKey Key)
+        public KeyInfo(string Id, FirebaseMethods.SecureKey Key)
         {
             this.Id = Id;
             this.Key = Key;
             InitializeComponent();
         }
         public string Id;
-        public SecureKey Key;
+        public FirebaseMethods.SecureKey Key;
 
         private async void KeyInfo_Load(object sender, EventArgs e)
         {
@@ -37,7 +36,7 @@ namespace HSE_Admin
             {
                 labelInfo.Text = "Ключ активирован";
                 buttonDelete.Text = "Заблокировать";
-                labelDate.Text = ConvertFromUnixTimestamp(Key.Date).ToString("MM/dd/yy HH:mm:ss zzz");
+                labelDate.Text = FirebaseMethods.ConvertFromUnixTimestamp(Key.Date).ToString("MM/dd/yy HH:mm:ss zzz");
             }
             if (Key.Date < 0)
             {
@@ -55,7 +54,7 @@ namespace HSE_Admin
 
         async Task DisplayUserInfo()
         {
-            var user = await GetUser(Key.UsedBy);
+            var user = await FirebaseMethods.GetUser(Key.UsedBy);
             labelUser.Text = user.ToString();
         }
 
@@ -75,17 +74,17 @@ namespace HSE_Admin
             string st = "";
             if (Key.Date == 0)
             {
-                st = await DeleteKey(Id);
+                st = await FirebaseMethods.DeleteKey(Id);
             }else
             if (Key.Date > 0)
             {
                 Key.Date = -1;
-                st = await SetKey(Id,Key);
+                st = await FirebaseMethods.SetKey(Id,Key);
             }else
             if (Key.Date < 0)
             {
-                Key.Date = ConvertToUnixTimestamp(DateTime.Now);
-                st = await SetKey(Id, Key);
+                Key.Date = FirebaseMethods.ConvertToUnixTimestamp(DateTime.Now);
+                st = await FirebaseMethods.SetKey(Id, Key);
             }
             if (st != "")
             {
